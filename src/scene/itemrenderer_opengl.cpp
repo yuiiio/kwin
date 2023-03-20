@@ -347,7 +347,7 @@ void ItemRendererOpenGL::renderItem(Item *item, int mask, const QRegion &region,
             opacity = renderNode.opacity;
         }
 
-        renderNode.texture->setFilter(GL_LINEAR);
+        renderNode.texture->setFilter(GL_NEAREST);
         renderNode.texture->setWrapMode(GL_CLAMP_TO_EDGE);
         renderNode.texture->bind();
 
