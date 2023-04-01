@@ -720,15 +720,6 @@ QPointF PointerInputRedirection::applyPointerConfinement(const QPointF &pos) con
     }
 
     const QRegion confinementRegion = getConstraintRegion(focus(), cf);
-    // logging
-    QRect bounding_rect = confinementRegion.boundingRect();
-    int height = bounding_rect.height();
-    int width = bounding_rect.width();
-    FILE *fp;
-    fp = fopen("/home/haibane/kwin-log", "w");
-    fprintf(fp, "applyPointerConfinement: confinementRegion: %d, %d \n", height, width);
-    fclose(fp);
-
     if (confinementRegion.contains(flooredPoint(pos))) {
         return pos;
     }
